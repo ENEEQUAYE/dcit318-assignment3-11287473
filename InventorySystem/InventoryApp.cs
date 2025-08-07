@@ -1,4 +1,5 @@
 using InventorySystem.Models;
+using InventorySystem.Interfaces;
 
 namespace InventorySystem
 {

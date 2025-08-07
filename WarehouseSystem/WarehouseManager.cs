@@ -1,5 +1,6 @@
 using WarehouseSystem.Repositories;
 using WarehouseSystem.Models;
+using WarehouseSystem.Interfaces;
 
 namespace WarehouseSystem
 {
@@ -7,6 +8,9 @@ namespace WarehouseSystem
     {
         private InventoryRepository<ElectronicItem> _electronics = new();
         private InventoryRepository<GroceryItem> _groceries = new();
+
+        public InventoryRepository<ElectronicItem> Electronics => _electronics;
+        public InventoryRepository<GroceryItem> Groceries => _groceries;
 
         public void SeedData()
         {

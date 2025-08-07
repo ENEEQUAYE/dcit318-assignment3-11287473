@@ -19,7 +19,7 @@ namespace GradingSystem
                 
                 var parts = line.Split(',');
                 if (parts.Length != 3)
-                    throw new MissingFieldException($"Line {lineNumber}: Expected 3 fields, got {parts.Length}");
+                    throw new Exceptions.MissingFieldException($"Line {lineNumber}: Expected 3 fields, got {parts.Length}");
                 
                 if (!int.TryParse(parts[0].Trim(), out int id))
                     throw new InvalidScoreFormatException($"Line {lineNumber}: Invalid ID format");

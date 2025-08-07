@@ -1,4 +1,5 @@
 ﻿using GradingSystem;
+using GradingSystem.Exceptions;
 
 public class Program
 {
@@ -23,7 +24,7 @@ public class Program
         {
             Console.WriteLine($"Error: {ex.Message}");
         }
-        catch (MissingFieldException ex)
+        catch (GradingSystem.Exceptions.MissingFieldException ex)
         {
             Console.WriteLine($"Error: {ex.Message}");
         }

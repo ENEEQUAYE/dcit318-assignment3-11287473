@@ -1,3 +1,5 @@
+using WarehouseSystem.Interfaces;
+
 namespace WarehouseSystem.Models
 {
     public class GroceryItem : IInventoryItem
