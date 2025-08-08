@@ -12,6 +12,8 @@ namespace InventorySystem
             _logger.Add(new InventoryItem(1, "Laptop", 10, DateTime.Now.AddDays(-10)));
             _logger.Add(new InventoryItem(2, "Monitor", 15, DateTime.Now.AddDays(-5)));
             _logger.Add(new InventoryItem(3, "Keyboard", 25, DateTime.Now.AddDays(-3)));
+            _logger.Add(new InventoryItem(4, "Mouse", 30, DateTime.Now.AddDays(-1)));
+            _logger.Add(new InventoryItem(5, "Printer", 8, DateTime.Now.AddDays(-7)));
         }
 
         public void SaveData() => _logger.SaveToFile();

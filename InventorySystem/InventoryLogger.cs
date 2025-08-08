@@ -15,14 +15,40 @@ namespace InventorySystem
 
         public void SaveToFile()
         {
-            string json = JsonSerializer.Serialize(_log, new JsonSerializerOptions { WriteIndented = true });
-            File.WriteAllText(_filePath, json);
+            try
+            {
+                using var writer = new StreamWriter(_filePath);
+                string json = JsonSerializer.Serialize(_log, new JsonSerializerOptions { WriteIndented = true });
+                writer.Write(json);
+                Console.WriteLine($"Data saved successfully to {_filePath}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error saving data: {ex.Message}");
+            }
         }
 
         public void LoadFromFile()
         {
-            if (File.Exists(_filePath))
-                _log = JsonSerializer.Deserialize<List<T>>(File.ReadAllText(_filePath)) ?? new();
+            try
+            {
+                if (File.Exists(_filePath))
+                {
+                    using var reader = new StreamReader(_filePath);
+                    string json = reader.ReadToEnd();
+                    _log = JsonSerializer.Deserialize<List<T>>(json) ?? new();
+                    Console.WriteLine($"Data loaded successfully from {_filePath}");
+                }
+                else
+                {
+                    Console.WriteLine($"File {_filePath} not found. Starting with empty inventory.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error loading data: {ex.Message}");
+                _log = new(); // Initialize empty list on error
+            }
         }
     }
 }
