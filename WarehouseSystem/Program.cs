@@ -20,6 +20,9 @@ public class Program
         catch (Exception ex) { Console.WriteLine(ex.Message); }
         
         manager.RemoveItemById(manager.Groceries, 999);
-        manager.IncreaseStock(manager.Groceries, 3, -5);
+        
+        // Test invalid quantity by setting quantity directly to negative
+        try { manager.Groceries.UpdateQuantity(3, -10); }
+        catch (Exception ex) { Console.WriteLine($"Error: {ex.Message}"); }
     }
 }

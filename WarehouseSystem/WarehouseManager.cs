@@ -16,9 +16,11 @@ namespace WarehouseSystem
         {
             _electronics.AddItem(new ElectronicItem(1, "Laptop", 10, "Dell", 24));
             _electronics.AddItem(new ElectronicItem(2, "Smartphone", 20, "Samsung", 12));
+            _electronics.AddItem(new ElectronicItem(5, "Tablet", 15, "Apple", 12));
             
             _groceries.AddItem(new GroceryItem(3, "Milk", 50, DateTime.Now.AddDays(7)));
             _groceries.AddItem(new GroceryItem(4, "Bread", 30, DateTime.Now.AddDays(3)));
+            _groceries.AddItem(new GroceryItem(6, "Cheese", 25, DateTime.Now.AddDays(14)));
         }
 
         public void PrintAllItems<T>(InventoryRepository<T> repo) where T : IInventoryItem
