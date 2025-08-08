@@ -1,0 +1,5 @@
+101, Alice Smith, 84
+102, Bob Johnson, 92
+103, Carol Davis, 67
+104, David Wilson, 73
+105, Eva Brown, 45
